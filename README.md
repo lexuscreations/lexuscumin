@@ -6,9 +6,14 @@
 
 ------------
 
-[Visit-Live-Site - LexusCumin](https://lexuscumin.netlify.app/ "Visit-Live-Site")
+| *[Visit-Live-Site - LexusCumin](https://lexuscumin.netlify.app/ "Visit-Live-Site")* |
 
 ------------
+
+> [React.js](https://reactjs.org/ "React.js") + [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage "LocalStorage") + [react-beautiful-dnd](https://www.npmjs.com/package/react-beautiful-dnd "react-beautiful-dnd")
+
+------------
+
 
 > #### Languages
 - Typescript
@@ -28,16 +33,16 @@
 
 ------------
 
-![](https://raw.githubusercontent.com/lexuscreations/lexuscumin/main/Screenshot%202022-01-31%20014539.png)
+![](https://raw.githubusercontent.com/lexuscreations/lexuscumin/main/public/images/screenshorts/Screenshot%202022-01-31%20014539.png)
 
 ------------
 
 ```javascript
 (() => {
 	try { // try at your own risk
-			run( "npm i || npm install" ) //After a Decade Or May Be Eternity
-			.then(() => run( "npm start || npm run start" )
-			.then((after_one_year) => open( "http://localhost:3000/" ))
+		run( "npm i || npm install" ) //After a Decade Or May Be Eternity
+		.then(() => run( "npm start || npm run start" )
+		.then((after_one_year) => open( "http://localhost:3000/" ))
 	} catch (err){
 		// only scrap buyers will catch your laptop/pc
 	}
