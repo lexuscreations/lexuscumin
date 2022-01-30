@@ -39,13 +39,13 @@
 
 ```javascript
 (() => {
-	try { // try at your own risk
-		run( "npm i || npm install" ) //After a Decade Or May Be Eternity
-		.then(() => run( "npm start || npm run start" )
-		.then((after_one_year) => open( "http://localhost:3000/" ))
-	} catch (err){
-		// only scrap buyers will catch your laptop/pc
-	}
+    try { // try at your own risk
+	run( "npm i || npm install" ) //After a Decade Or May Be Eternity
+	.then(() => run( "npm start || npm run start" )
+	.then((after_one_year) => open( "http://localhost:3000/" ))
+    } catch (err){
+	// only scrap buyers will catch your laptop/pc
+    }
 })()
 ```
 
