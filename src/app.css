@@ -1,0 +1,22 @@
+.todolistContainer > div {
+    min-width: 0px;
+}
+
+.todolistContainer > div > div > div {
+    flex: 1 1 1;
+    width: 100%;
+}
+
+.todolistContainer > div > div > div .ant-card-head {
+    min-height: 65px;
+}
+
+.todolistContainer > div > div > div .ant-card-body > div {
+    min-height: 65px;
+}
+
+@media only screen and (max-width: 600px) {
+    .todolistContainer > div > div {
+        flex-wrap: wrap;
+    }
+}
