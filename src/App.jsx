@@ -53,7 +53,7 @@ const App = () => {
           </a>
         </div>
       </div>
-      <div style={{ overflow: 'auto' }}>
+      <div className="todolistContainer">
         <Taskboard />
       </div>
     </>
