@@ -1,9 +1,9 @@
-import { Droppable, Draggable } from 'react-beautiful-dnd'
-import styled from 'styled-components'
-import { Button, Card } from 'antd'
-import { TaskboardItem, TaskboardItemStatus } from './TaskboardTypes'
-import TaskboardItemCard, { TaskboardItemCardProps } from './TaskboardItemCard'
-import { colors } from '../shared/SharedUtils'
+import { Droppable, Draggable } from "react-beautiful-dnd";
+import styled from "styled-components";
+import { Button, Card } from "antd";
+import { TaskboardItem, TaskboardItemStatus } from "./TaskboardTypes";
+import TaskboardItemCard, { TaskboardItemCardProps } from "./TaskboardItemCard";
+import { colors } from "../shared/SharedUtils";
 
 const TaskboardColRoot = styled(Card)`
   user-select: none;
@@ -19,10 +19,10 @@ const TaskboardColRoot = styled(Card)`
     height: 100%;
     padding: 0;
   }
-`
+`;
 
 interface DroppableRootProps {
-  isDraggingOver: boolean
+  isDraggingOver: boolean;
 }
 
 const DroppableRoot = styled.div<DroppableRootProps>`
@@ -30,17 +30,27 @@ const DroppableRoot = styled.div<DroppableRootProps>`
   overflow-y: auto;
   background-color: ${({ isDraggingOver }) =>
     isDraggingOver ? colors.primary[2] : colors.primary[1]};
-`
+`;
 
-export type TaskboardColProps = Pick<TaskboardItemCardProps,'onEdit' | 'onDelete'> & {
-  items: TaskboardItem[]
-  status: TaskboardItemStatus
-  onClickAdd?: VoidFunction
-}
+export type TaskboardColProps = Pick<
+  TaskboardItemCardProps,
+  "onEdit" | "onDelete"
+> & {
+  items: TaskboardItem[];
+  status: TaskboardItemStatus;
+  onClickAdd?: VoidFunction;
+};
 
-function TaskboardCol({ items, status, onClickAdd, onEdit, onDelete }: TaskboardColProps) {
+function TaskboardCol({
+  items,
+  status,
+  onClickAdd,
+  onEdit,
+  onDelete,
+}: TaskboardColProps) {
   return (
-    <TaskboardColRoot title={`${status} (${items.length})`}
+    <TaskboardColRoot
+      title={`${status} (${items.length})`}
       extra={
         onClickAdd && (
           <Button type="primary" onClick={onClickAdd}>
@@ -76,14 +86,14 @@ function TaskboardCol({ items, status, onClickAdd, onEdit, onDelete }: Taskboard
                     </div>
                   )}
                 </Draggable>
-              )
+              );
             })}
             {provided.placeholder}
           </DroppableRoot>
         )}
       </Droppable>
     </TaskboardColRoot>
-  )
+  );
 }
 
-export default TaskboardCol
+export default TaskboardCol;

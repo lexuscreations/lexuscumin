@@ -1,52 +1,46 @@
-#### *LexusCumin* is Free, openSource Standard_TaskManagement-Tools
+# Getting Started with Create React App
 
-------------
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-> [&copy;LexusCreations [`LokeshVishwakarma`]](https://github.com/lexuscreations "LexusCreations[`LokeshVishwakarma`]")
+## Available Scripts
 
-------------
+In the project directory, you can run:
 
-| *[Visit-Live-Site - LexusCumin](https://lexuscumin.netlify.app/ "Visit-Live-Site")* |
+### `npm start`
 
-------------
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-> [React.js](https://reactjs.org/ "React.js") + [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage "LocalStorage") + [react-beautiful-dnd](https://www.npmjs.com/package/react-beautiful-dnd "react-beautiful-dnd")
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-------------
+### `npm test`
 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-> #### Languages
-- Typescript
-- Javascript [ JS / ES ]
-- React.js
-- HTML 5 / JSX
-- CSS 3
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-> #### Tools
-- antd
-- eslint
-- prettier
-- react-beautiful-dnd
-- styled-components
-- create-react-app
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-------------
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-![](https://raw.githubusercontent.com/lexuscreations/lexuscumin/main/public/images/screenshorts/Screenshot%202022-01-31%20014539.png)
+### `npm run eject`
 
-------------
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-```javascript
-(() => {
-    try { // try at your own risk
-	run( "npm i || npm install" ) //After a Decade Or May Be Eternity
-	.then(() => run( "npm start || npm run start" )
-	.then((after_one_year) => open( "http://localhost:3000/" ))
-    } catch (err){
-	// only scrap buyers will catch your laptop/pc
-    }
-})()
-```
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-*[&#8599; editor.md](https://pandao.github.io/editor.md/en.html "&#8599; editor.md")*
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).

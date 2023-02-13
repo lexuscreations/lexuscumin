@@ -5,7 +5,7 @@ export interface TaskboardItem {
 }
 
 export enum TaskboardItemStatus {
-  TO_DO = 'To Do',
-  IN_PROGRESS = 'In Progress',
-  DONE = 'Done',
+  TO_DO = "To Do",
+  IN_PROGRESS = "In Progress",
+  DONE = "Done",
 }

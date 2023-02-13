@@ -1,4 +1,4 @@
-import { Tooltip, TooltipProps } from 'antd';
+import { Tooltip, TooltipProps } from "antd";
 
 type BaseTooltipProps = TooltipProps;
 

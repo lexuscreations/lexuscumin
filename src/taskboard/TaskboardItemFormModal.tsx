@@ -1,13 +1,13 @@
-import { useEffect, useRef } from 'react';
-import { Modal, Form, ModalProps, Input } from 'antd';
-import { TaskboardItem } from './TaskboardTypes';
+import { useEffect, useRef } from "react";
+import { Modal, Form, ModalProps, Input } from "antd";
+import { TaskboardItem } from "./TaskboardTypes";
 
 export type TaskboardItemFormValues = Pick<
   TaskboardItem,
-  'title' | 'description'
+  "title" | "description"
 >;
 
-type TaskboardItemFormModalProps = Pick<ModalProps, 'visible'> & {
+type TaskboardItemFormModalProps = Pick<ModalProps, "visible"> & {
   initialValues: TaskboardItemFormValues;
   onCancel: VoidFunction;
   onOk: (values: TaskboardItemFormValues) => void;
@@ -21,7 +21,7 @@ function TaskboardItemFormModal({
 }: TaskboardItemFormModalProps) {
   const [form] = Form.useForm<TaskboardItemFormValues>();
 
-  const inputRef = useRef<Input>(null);
+  const inputRef = useRef<any>(null);
 
   useEffect(() => {
     if (visible) {

@@ -1,5 +1,5 @@
-import { goTrySync } from 'go-try';
-import React, { useCallback, useEffect, useState } from 'react';
+import { goTrySync } from "go-try";
+import React, { useCallback, useEffect, useState } from "react";
 
 // Syncs state to localStorage and vice versa
 export function useSyncedState<T>(
@@ -8,7 +8,7 @@ export function useSyncedState<T>(
 ): [T, React.Dispatch<React.SetStateAction<T>>] {
   const getValueFromStorage = useCallback(
     () =>
-      goTrySync(() => JSON.parse(localStorage.getItem(key) ?? '')).data ??
+      goTrySync(() => JSON.parse(localStorage.getItem(key) ?? ""))[1] ??
       initialValue,
     [initialValue, key]
   );
@@ -20,10 +20,10 @@ export function useSyncedState<T>(
       setState(getValueFromStorage);
     }
 
-    window.addEventListener('storage', handleStorageChange);
+    window.addEventListener("storage", handleStorageChange);
 
     return () => {
-      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener("storage", handleStorageChange);
     };
   }, [getValueFromStorage]);
 

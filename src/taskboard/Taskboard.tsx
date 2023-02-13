@@ -1,13 +1,15 @@
-import { DragDropContext, DragDropContextProps } from 'react-beautiful-dnd'
-import { useMemo, useState } from 'react'
-import produce from 'immer'
-import styled from 'styled-components'
-import { TaskboardItem, TaskboardItemStatus } from './TaskboardTypes'
-import TaskboardItemFormModal, { TaskboardItemFormValues } from './TaskboardItemFormModal'
-import TaskboardCol, { TaskboardColProps } from './TaskboardCol'
-import { useSyncedState } from '../shared/SharedHooks'
+import { DragDropContext, DragDropContextProps } from "react-beautiful-dnd";
+import { useMemo, useState } from "react";
+import produce from "immer";
+import styled from "styled-components";
+import { TaskboardItem, TaskboardItemStatus } from "./TaskboardTypes";
+import TaskboardItemFormModal, {
+  TaskboardItemFormValues,
+} from "./TaskboardItemFormModal";
+import TaskboardCol, { TaskboardColProps } from "./TaskboardCol";
+import { useSyncedState } from "../shared/SharedHooks";
 
-const generateId = () => Date.now().toString()
+const generateId = () => Date.now().toString();
 
 const TaskboardRoot = styled.div`
   min-height: 0;
@@ -15,7 +17,7 @@ const TaskboardRoot = styled.div`
   min-width: 800px;
   max-width: 1400px;
   margin: auto;
-`
+`;
 
 const defaultItems = {
   [TaskboardItemStatus.TO_DO]: [],
@@ -27,11 +29,11 @@ type TaskboardData = Record<TaskboardItemStatus, TaskboardItem[]>;
 
 function Taskboard() {
   const [itemsByStatus, setItemsByStatus] = useSyncedState<TaskboardData>(
-    'itemsByStatus',
+    "itemsByStatus",
     defaultItems
   );
 
-  const handleDragEnd: DragDropContextProps['onDragEnd'] = ({
+  const handleDragEnd: DragDropContextProps["onDragEnd"] = ({
     source,
     destination,
   }) => {
@@ -53,21 +55,21 @@ function Taskboard() {
     );
   };
 
-  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
-  const [itemToEdit, setItemToEdit] = useState<TaskboardItem | null>(null)
+  const [itemToEdit, setItemToEdit] = useState<TaskboardItem | null>(null);
 
   const openTaskItemModal = (itemToEdit: TaskboardItem | null) => {
-    setItemToEdit(itemToEdit)
-    setIsModalVisible(true)
-  }
+    setItemToEdit(itemToEdit);
+    setIsModalVisible(true);
+  };
 
   const closeTaskItemModal = () => {
-    setItemToEdit(null)
-    setIsModalVisible(false)
-  }
+    setItemToEdit(null);
+    setIsModalVisible(false);
+  };
 
-  const handleDelete: TaskboardColProps['onDelete'] = ({
+  const handleDelete: TaskboardColProps["onDelete"] = ({
     status,
     itemToDelete,
   }) =>
@@ -75,17 +77,17 @@ function Taskboard() {
       produce(current, (draft) => {
         draft[status] = draft[status].filter(
           (item) => item._id !== itemToDelete._id
-        )
+        );
       })
-    )
+    );
 
   const initialValues = useMemo<TaskboardItemFormValues>(
     () => ({
-      title: itemToEdit?.title ?? '',
-      description: itemToEdit?.description ?? '',
+      title: itemToEdit?.title ?? "",
+      description: itemToEdit?.description ?? "",
     }),
     [itemToEdit]
-  )
+  );
 
   return (
     <>
@@ -128,17 +130,16 @@ function Taskboard() {
               } else {
                 draft[TaskboardItemStatus.TO_DO].push({
                   ...values,
-                  _id: generateId()
-                })
+                  _id: generateId(),
+                });
               }
             })
-          )
+          );
         }}
         initialValues={initialValues}
       />
-
     </>
-  )
+  );
 }
 
-export default Taskboard
+export default Taskboard;
